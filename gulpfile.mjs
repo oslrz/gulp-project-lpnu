@@ -22,22 +22,20 @@ const paths = {
   dist: 'dist/',
 };
 
-// 🧹 Очистка dist
 export async function clean() {
   await deleteAsync([paths.dist]);
 }
 
-// 🎨 Стилі
 export function styles() {
   return src(paths.scss, { sourcemaps: true })
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({ level: 2 }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(paths.dist + 'css', { sourcemaps: '.' }))
-    .pipe(browserSync.stream());
+    .pipe(browserSync.stream())
+    .pipe(sass({ quietDeps: true }).on('error', sass.logError));
 }
 
-// ⚙️ Скрипти
 export function scripts() {
   return src(paths.js, { sourcemaps: true })
     .pipe(uglify())
@@ -46,14 +44,12 @@ export function scripts() {
     .pipe(browserSync.stream());
 }
 
-// 🖼️ Зображення
 export function images() {
   return src(paths.img)
     .pipe(imagemin())
     .pipe(dest(paths.dist + 'img'));
 }
 
-// 🧱 HTML
 export function html() {
   return src(paths.html)
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -61,7 +57,6 @@ export function html() {
     .pipe(browserSync.stream());
 }
 
-// 🧭 Сервер + watcher
 export function serve() {
   browserSync.init({
     server: { baseDir: paths.dist },
@@ -76,6 +71,5 @@ export function serve() {
   watch(paths.img, images);
 }
 
-// 🏗️ Збірка
 export const build = series(clean, parallel(styles, scripts, images, html));
 export default series(build, serve);
