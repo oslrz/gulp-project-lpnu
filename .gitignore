@@ -1,0 +1,54 @@
+# ============================================
+# GULP PROJECT .GITIGNORE
+# ============================================
+
+# Node
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+.tmp/
+.cache/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE & editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sass / CSS artifacts
+src/scss/*.css
+src/scss/*.css.map
+
+# Logs
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# OS + temporary files
+*.swp
+*.bak
+*.tmp
+*.temp
+*.orig
+*.old
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Optional: If you use gulpfile.mjs compiled by bundlers
+*.map
