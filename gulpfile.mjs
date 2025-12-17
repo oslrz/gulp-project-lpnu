@@ -27,13 +27,14 @@ export async function clean() {
 }
 
 export function styles() {
-  return src(paths.scss, { sourcemaps: true })
+  return src(paths.scss)
+    .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(cleanCSS({ level: 2 }))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(dest(paths.dist + 'css', { sourcemaps: '.' }))
-    .pipe(browserSync.stream())
-    .pipe(sass({ quietDeps: true }).on('error', sass.logError));
+    .pipe(sourcemaps.write('.'))
+    .pipe(dest(paths.dist + 'css'))
+    .pipe(browserSync.stream());
 }
 
 export function scripts() {
