@@ -1,0 +1,23 @@
+{
+  "person": {
+    "firstName": "Іван",
+    "lastName": "Іваненко"
+  },
+  "experience": [
+    {
+      "company": "Company A",
+      "role": "Frontend Developer",
+      "years": "2021–2023"
+    },
+    {
+      "company": "Company B",
+      "role": "Web Designer",
+      "years": "2019–2021"
+    },
+    {
+      "company": "Company C",
+      "role": "Intern",
+      "years": "2018–2019"
+    }
+  ]
+}

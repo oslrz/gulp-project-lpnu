@@ -34,6 +34,12 @@ export function bootstrapJS() {
     .pipe(dest(paths.dist + 'js'));
 }
 
+export function json() {
+  return src('src/json/**/*.json')
+    .pipe(dest(paths.dist + 'json'));
+}
+
+
 export async function clean() {
   await deleteAsync([paths.dist]);
 }
@@ -94,5 +100,5 @@ export function serve() {
   watch(paths.img, images);
 }
 
-export const build = series(clean, parallel(styles, scripts, images, html, bootstrapCSS, bootstrapJS));
+export const build = series(clean, parallel(styles, scripts, images, html, bootstrapCSS, bootstrapJS, json));
 export default series(build, serve);
