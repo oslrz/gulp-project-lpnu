@@ -1,0 +1,5 @@
+@use "../base/variables" as *;
+
+.two-cols {
+  margin-top: $base-spacing * 2;
+}

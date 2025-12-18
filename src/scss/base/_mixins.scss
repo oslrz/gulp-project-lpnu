@@ -1,0 +1,11 @@
+@use "variables" as *;
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin section-spacing($multiplier: 1) {
+  margin-bottom: $base-spacing * $multiplier;
+}

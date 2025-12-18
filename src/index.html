@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.min.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Resume</title>
+    <link href="css/style.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
 
-  <h1>Hello world</h1>
-  
-</body>
+  <body class="resume-bg">
+    <div class="resume-container">
+      @@include('components/header.html')
+      @@include('components/contact.html')
+
+      <div class="separator"></div>
+      @@include('components/about.html')
+
+      <div class="skills-separator"></div>
+
+      @@include('components/skills&languages.html')
+    </div>
+  </body>
+  @@include('components/interactive-section.html')
+  <script src="./js/main.min.js"></script>
 </html>

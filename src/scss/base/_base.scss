@@ -1,0 +1,30 @@
+@use "variables" as *;
+
+%small-text {
+  font-size: 12px;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+.hidden {
+  display: none;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+  transform: rotate(90deg);
+}
