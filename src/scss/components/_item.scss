@@ -1,0 +1,32 @@
+@use "../base/mixins" as *;
+@use "../base/variables" as *;
+
+.item {
+  @include section-spacing(2);
+
+  h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: calc($base-spacing / 2);
+  }
+
+  .place {
+    font-size: 12px;
+    color: $muted-color;
+    margin-bottom: calc($base-spacing * 2);
+  }
+
+  .desc {
+    @extend %small-text !optional;
+  }
+
+  .item-head {
+    @include flex-between;
+
+    .year {
+      font-size: 12px;
+      color: $muted-color;
+    }
+  }
+}

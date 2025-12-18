@@ -1,3 +1,15 @@
+@use "base/variables" as *;
+@use "base/mixins" as *;
+@use "base/base";
+
+@use "components/section-title";
+@use "components/item";
+@use "components/two-cols";
+
+
+
+
+
 *,
 *::before,
 *::after {
@@ -42,17 +54,7 @@ body.resume-bg {
   width: 100%;
 }
 
-.col-3 {
-  width: 27%;
-}
 
-.col-9 {
-  width: 73%;
-}
-
-.col-6 {
-  width: 50%;
-}
 
 
 .top-section {
@@ -112,16 +114,6 @@ body.resume-bg {
   color: #777777;
   letter-spacing: 0.28em;
   text-transform: uppercase;
-}
-
-.section-title {
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 30px;
 }
 
 .about-title {
@@ -196,10 +188,6 @@ body.resume-bg {
 }
 
 
-.two-cols {
-  column-gap: 38px;
-}
-
 .section-title span:last-child {
   margin-top: 2px;
 }
@@ -250,10 +238,6 @@ body.resume-bg {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-
-.skills-lang {
-  column-gap: 38px;
 }
 
 .skills-grid {
